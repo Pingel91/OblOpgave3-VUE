@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Say Hello</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>String Manipulation</h1>
+        
+            <div id="app">
+                <input id="inputField" v-model="name" placeholder="Name">
+                <button id="button" v-on:click="stringManipulation(name)" class="btn btn-primary">Do it!</button>
+                <div id="outputField" v-if="name != 'No name'" > 
+                    <ol>
+                        <li>{{message}}</li>
+                        <li>{{messageLow}}</li>
+                        <li>{{messageUpper}}</li>
+                    </ol>
+                    <table class="table table-striped table-bordered">
+                        <tbody scope="row" class="col-sm-6">
+                            <tr>
+                                <td scope="row" class="col-sm-6">1</td>
+                                <td>{{message}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="col-sm-6">2</td>
+                                <td>{{messageLow}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="col-sm-6">3</td>
+                                <td>{{messageUpper}}</td>
+                            </tr>
+                        </tbody>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+
+    <script>
+        const mountApp = app.mount('#app')
+    </script>
+</body>
+
+</html>
